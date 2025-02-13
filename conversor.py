@@ -24,10 +24,10 @@ class ExcelToJsonConverter:
     def create_widgets(self):
         # Frame principal
         main_frame = tk.Frame(self.root, padx=20, pady=20)
-        main_frame.pack(fill=tk.BOTH, expand=True)
+        main_frame.pack(pady=5, fill=tk.X)
         
         self.post_conversion_frame = tk.Frame(main_frame)
-        self.post_conversion_frame.pack(pady=5)
+        self.post_conversion_frame.pack(pady=5, fill=tk.X)
 
 
         # Título
@@ -41,6 +41,7 @@ class ExcelToJsonConverter:
         # Frame superior para botões e seleção de planilha
         top_frame = tk.Frame(main_frame)
         top_frame.pack(fill=tk.X, pady=10)
+        
         
         # Botões
         select_button = tk.Button(
@@ -127,10 +128,10 @@ class ExcelToJsonConverter:
             state=tk.DISABLED
         )
         self.convert_button = convert_button
-        convert_button.pack(pady=10)
+        convert_button.pack(side=tk.LEFT,pady=10)
         
         self.open_folder_button = tk.Button(
-            self.post_conversion_frame,
+            main_frame,
             text="Abrir Pasta do Arquivo",
             command=self.open_output_folder,
             width=20,
